@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>EKI-otsing</title>
+<style type="text/css">
+body {
+/*background-color: #DBBAB9;*/
+background-color: #eee;
+margin: 0px;
+padding: 0px;
+font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+}
+.footer {
+color: #666;
+font-size: small;
+padding-left: 200px;
+}
+.footer a {
+color: #888;
+}
+.container {
+display:block;
+position:absolute;
+top:20%;
+left:15%;
+width:550px;
+height: auto;
+border-width: 0px;
+padding: 10px;
+background-color: transparent;
+}
+.results {
+border: 1px solid #666;
+margin-top: 10px;
+word-wrap: break-word;
+background-color: #7F856E;
+color: #7F0000;
+padding: 6px;
+letter-spacing: 2px;
+}
+.input-field {
+border: 1px solid #666;
+padding: 10px;
+margin-left: 24%;
+width: 260px;
+background-color: #7F856E;
+color: #7F0000;
+}
+#manual {
+display: none;
+border: 1px solid #666;
+margin-top: 10px;
+background-color: #7F856E;
+color: #7F0000;
+padding: 6px;
+}
+a {
+color: #7F0000;
+}
+input {
+font-size: 1.2em;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="input-field">
+<form action="/otsi" method="POST">
+<label for="query">Otsitav sõna:</label><br />
+<input type="text" name="query" size="15" maxlength="30" value="{{ query }}" />
+<input type="submit" name="search" value="Otsi"><br />
+<input type="checkbox" name="hangman" value="1" {{ checked }}/><label for="hangman">Poomismäng?</label> <a href="#" onclick="document.getElementById('manual').style.display = 'block';">Õpetus</a>
+</form>
+</div>
+
+<div id="manual">
+<a href="#" style="float: right;" onclick="document.getElementById('manual').style.display = 'none';">Peida õpetus</a><br />
+<h3>EKI-otsing</h3>
+Selle tööriista abil saab otsida sõnu <a href="http://www.eki.ee/dict/qs2006/index.cgi">ÕS 2006</a> andmebaasist.
+Tundmatu täht asendada küsimärgiga ja tähtede rühm *-ga. Tööriista saab edukalt kasutada ristsõnade või poomismängu lahendamiseks.<br />
+<a href="images/1.jpeg"><img src="images/1.jpeg" width="150" height="200"></a> 
+<a href="images/2.jpeg"><img src="images/2.jpeg" width="200" height="200"></a> 
+<a href="images/3.jpeg"><img src="images/3.jpeg" width="150" height="200"></a>
+</div>
+
+<div class="results">
+<h3>Päring "{{ query }}" sai {{ count_results }} tulemust:</h3>
+{{ results }}
+</div>
+<span class="footer">EKI-otsing by <a href="http://ando.roots.ee/wp/2010/poomismangu-ja-ristsona-lahendamine-pythoni-ja-os-i-abil/">A. Roots</a></span>
+</div>
+</body>
+</html>
