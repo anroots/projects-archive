@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="A simple Javascript flowchart example" /> 
+	<meta name="keywords" content="jquery,javascript,flowchart,dynamic flowchart,flowchart example" /> 
+	<meta name="author" content="Ando Roots" /> 
+        <title>The Flowchart App</title>
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" media="all" href="less.css"/>
+        <link rel="stylesheet" media="all" href="css3buttons.css"/>
+        <link rel="stylesheet" media="all" href="style.css"/>   
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> 
+        <script type="text/javascript">
+        
+        // Javascript to load new questions and answers
+        $(document).ready(function() {
+            load_new_data(1); // Load the first question
+        });
+        
+        // Rebinds the click event on newly loaded options
+        function rebind() {
+                $('.button').click(function(){
+                        var next_id = $(this).attr('id');
+                        load_new_data(next_id);
+                });     
+        }
+        
+        
+        // Loads new questions and answers
+        function load_new_data(next_id) {
+
+                $.getJSON('json.php', {next_id: next_id}, function(data) {
+                
+                        $('#question_title').html('#' + data.id + ': ' + data.question);
+                        var items = [];
+                      
+                        $.each(data.options, function(key, val) {
+                          items.push('<a class="button" id="' + key + '">' + val + '</a>');
+                        });
+                      
+                      $('#question_options').html(items.join(' '));
+                      rebind(); // Rebind .click on buttons   
+                });
+
+        }
+        </script>
+</head>
+<body lang="en">
+    
+    <div id="container">
+        
+        <h1>The Flowchart App</h1>
+        <section>
+                <h2 class="selected">How A Womans Brain Works During An Argument</h2>
+                <article>
+                        <h3 id="question_title"></h3>
+                        <div id="question_options"></div>
+                </article>
+        </section>
+        
+        
+        
+    </div>
+    <footer>Read more about this app and the flowchart from <a href="http://ando.roots.ee/wp/2011/04/fnp-simple-flowchart-app/" title="Blog">the blog post</a></footer>
+</body>
+</html>
