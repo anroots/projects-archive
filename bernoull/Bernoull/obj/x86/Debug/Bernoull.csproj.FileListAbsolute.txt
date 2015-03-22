@@ -1,0 +1,9 @@
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\bin\Debug\Bernoull.exe
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\bin\Debug\Bernoull.pdb
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\Bernoull.Form1.resources
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\Bernoull.Properties.Resources.resources
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\Bernoull.exe
+c:\users\ando\documents\visual studio 2010\Projects\Bernoull\Bernoull\obj\x86\Debug\Bernoull.pdb
